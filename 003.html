@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шаблон страницы Homestuck</title>
+    <style>
+        /* Базовые настройки страницы */
+        body {
+            background-color: #333333; 
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Главный контейнер (серая область теперь строго как в оригинале) */
+        #page {
+            width: 950px;
+            background-color: #C6C6C6;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Растянет серый фон до самого низа экрана */
+        }
+
+        /* Игровая область */
+        .comic-container {
+            width: 650px; 
+            background-color: #EEEEEE;
+            padding: 0; 
+            box-sizing: border-box;
+            text-align: center;
+            padding-bottom: 30px; /* ДОБАВЛЕНО: создает пустое пространство в самом низу бежевого квадрата */
+        }
+
+        /* Стилизация картинки (Чёткие пиксели без мыла) */
+        .comic-image img {
+            max-width: 100%;
+            height: auto;
+            
+            /* Отключаем сглаживание во всех браузерах (включая Opera GX) */
+            image-rendering: -moz-crisp-edges;         /* Firefox */
+            image-rendering: -o-crisp-edges;           /* Старая Opera */
+            image-rendering: -webkit-optimize-contrast;/* Safari / WebKit */
+            image-rendering: crisp-edges;              /* Современные стандарты */
+            image-rendering: pixelated;                /* Chrome / Opera GX / Яндекс */
+            
+            /* Убираем возможное размытие от самого браузера */
+            -ms-interpolation-mode: nearest-neighbor;  /* IE */
+        }
+
+
+        /* Верхний текст (Заголовок строго как в оригинале) */
+        .comic-title {
+            font-family: "Courier New", monospace;
+            font-size: 32px;      /* Крупный размер */
+            font-weight: bold;    /* Жирный шрифт */
+            color: #000000;
+            margin-top: 10px;     /* Небольшой отступ сверху */
+            margin-bottom: 15px;  /* Отступ до картинки */
+            text-align: center;
+        }
+
+        /* Нижний основной текст */
+        .comic-text {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000000;
+            line-height: 1.35;
+            margin: 20px 0;
+            padding: 0 25px; 
+            text-align: center;
+            margin-bottom: 40px; /* ДОБАВЛЕНО: расталкивает текст и кнопку перехода друг от друга */
+        }
+    </style>
+</head>
+<body>
+
+ <div id="page">
+    
+    <!-- Основной игровой экран -->
+    <div class="comic-container">
+        
+        <!-- ТЕКСТ ВЫШЕ (Заголовок) -->
+        <div class="comic-title">
+            Дать пять Жасу.
+        </div>
+
+        <!-- КАРТИНКА -->
+        <div class="comic-image">
+            <img src="/images/3_1.gif" alt="Comic Frame">
+        </div>
+
+
+        <!-- ТЕКСТ ВНИЗУ (Теперь жирный) -->
+        <div class="comic-text">
+        Этот чел насколько крут что *сам* может дать тебе пять.
+        </div>
+
+    </div>
+
+ </div>
+
+</body>
+</html>
