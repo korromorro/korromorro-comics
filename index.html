@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комиксы Korromorro</title>
+    <style>
+        /* Базовые настройки страницы-хаба */
+        body {
+            background-color: #1A1A1A; /* Темный фон для главного меню */
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Главная серая панель-контейнер */
+        #hub-page {
+            width: 950px;
+            background-color: #C6C6C6;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 8px; /* Слегка скруглим углы для красоты */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        /* Заголовок архива */
+        .hub-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Описание сайта */
+        .hub-description {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222222;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.5;
+            margin-bottom: 50px;
+        }
+
+        /* Сетка/список для выбора комиксов */
+        .comic-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Блок отдельного комикса */
+        .comic-item {
+            width: 650px;
+            background-color: #EEEEEE;
+            padding: 25px;
+            box-sizing: border-box;
+            border: 2px solid #000000;
+            text-align: left;
+        }
+
+        /* Кнопка-ссылка на комикс */
+        .comic-link {
+            font-size: 24px;
+            font-family:  courier new, monospace;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .comic-link a {
+            color: #0000FF;
+            text-decoration: underline;
+        }
+
+        /* Краткое инфо о комиксе */
+        .comic-info {
+            font-size: 14px;
+            color: #000000;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+ <div id="hub-page">
+    
+    <!-- ЗАГЛОВАК ХАБА -->
+    <div class="hub-title">
+        Комиксы Korromorro (меня тоесь я cool (.030.))
+    </div>
+
+    <!-- ТЕКСТ ПРИВЕТСТВИЯ -->
+    <div class="hub-description">
+        хайо папищеке там или как сейчас молодёжно: превед медвед! корочее там внизу можете почитать пару страниц первого вышеджего коммикса, потом решим в тгк какой комикс следующимм. чичивапчичи::P
+    </div>
+
+    <!-- СПИСОК ВСЕХ КОМИКСОВ -->
+    <div class="comic-list">
+        
+        <!-- БЛОК КОМИКСА SUCKSTUCK -->
+        <div class="comic-item">
+            <!-- Кнопка-переход к первой странице комикса -->
+            <div class="comic-link">
+                &gt; <a href="SUCKSTUCK/pages/001.html">Читать SUCKSTUCK</a>
+            </div>
+            <!-- Описание (можете изменить под себя) -->
+            <div class="comic-info">
+                историю о лимонном пиздюке-тролле, в целом интересно ноо страниц мало. 
+                <br>
+                5.7/10. 
+            </div>
+        </div>
+
+        <!-- Сюда в будущем можно будет добавлять новые блоки <div class="comic-item"> для других историй -->
+
+    </div>
+
+ </div>
+
+</body>
+</html>
