@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUCKSTUCK | Комиксы Korromorro</title>
+    <style>
+        /* Базовые настройки страницы */
+        body {
+            background-color: #333333; 
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Главный контейнер (серая область) */
+        #page {
+            width: 950px;
+            background-color: #C6C6C6;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; 
+        }
+
+        /* Игровая область (бежевый квадрат) */
+        .comic-container {
+            width: 650px; 
+            background-color: #EEEEEE;
+            padding: 0; 
+            box-sizing: border-box;
+            text-align: center;
+            padding-bottom: 30px; 
+        }
+
+        /* Верхний текст (Заголовок) */
+        .comic-title {
+            font-family: "Courier New", monospace;
+            font-size: 32px;      
+            font-weight: bold;    
+            color: #000000;
+            margin-top: 10px;     
+            margin-bottom: 15px;  
+            text-align: center;
+        }
+
+        /* Стилизация картинки (Чёткие пиксели без мыла) */
+        .comic-image img {
+            max-width: 100%;
+            height: auto;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -o-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            -ms-interpolation-mode: nearest-neighbor;
+        }
+
+        /* Общий контейнер, который ВСЕГДА отображает мелкий пунктир */
+        .pesterlog-container {
+            background-color: #EEEEEE; 
+            border: 1px dashed #666666; 
+            padding: 2px 10px 2px 10px; /* УМЕНЬШИЛИ ПЕРВОЕ ЧИСЛО (верхний отступ) с 10 до 5 */
+            margin: 15px 25px;
+        }
+
+        /* Кнопка */
+        /* Кнопка «Показать досталлог» */
+        .pesterlog-button {
+            background-color: #D8D8D8; /* Стандартный серый цвет кнопки */
+            border: 1px solid #333333;
+            padding: 3px 14px; 
+            font-size: 11px; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            font-weight: 600;
+            
+            /* ИЗМЕНЕНО: теперь курсор НЕ будет превращаться в руку-указатель, а останется стрелкой */
+            cursor: default; 
+            
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+        /* ДОБАВЛЕНО: Эффект при наведении мыши (кнопка становится темнее) */
+        .pesterlog-button:hover {
+            background-color: #676767; /* Более темный оттенок серого */
+        }
+
+
+        /* Контент с текстом (Каноничный шрифт логов Homestuck) */
+        .pesterlog-content {
+            display: none; 
+            text-align: left;
+            font-size: 14px;
+            font-family: "Courier New", Courier, monospace; /* ИЗМЕНИЛИ НА COURIER NEW */
+            font-weight: bold; /* Текст остался жирным */
+            line-height: 1.4;
+            margin-top: 2px;
+            padding: 22px; 
+        }
+
+
+        /* Зона кнопки перехода на следующую страницу */
+        .comic-next {
+            font-size: 24px;
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 25px; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+        }
+    </style>
+</head>
+<body>
+
+ <div id="page">
+    
+    <div class="comic-container">
+        
+        <!-- ТЕКСТ ВЫШЕ (Заголовок) -->
+        <div class="comic-title">
+            Корамо: Ответить МС.
+        </div>
+
+        <!-- КАРТИНКА (Путь к вашей новой гифке общения) -->
+        <div class="comic-image">
+            <img src="../images/7_1.gif" alt="Comic Frame">
+        </div>
+
+        <!-- ОБЩИЙ КОНТЕЙНЕР ДОСТАЛЛОГА (РАМКА ТЕПЕРЬ ТУТ) -->
+    <div class="pesterlog-container">
+        <!-- КНОПКА ТЕПЕРЬ ПО ЦЕНТРУ ВНУТРИ РАМКИ -->
+        <center>
+            <div class="pesterlog-button" onclick="togglePesterlog(this)">
+            Показать досталог
+        </div>
+        </center>
+
+        <div class="pesterlog-content" id="pesterlog">
+            <!-- Начало лога -->
+            <span style="color: #009999;">морскаяСвинка [МС]</span> начала троллить <span style="color: #004c99;">лимонногоДебошира [ЛД]</span>
+            <br>
+            <br>
+            <span style="color: #009999;">
+                МС: кора
+                <br>
+                МС: кора
+                <br>
+                МС: кора
+            </span>
+            <br>
+            <span style="color: #004c99;">ЛД:Ой, прив5т, П5га!</span>
+            <br>
+            <span style="color: #009999;">МС:привет!</span>
+            <br>
+            <span style="color: #009999;">МС: ты не занят ??????</span>
+            <br>
+            <span style="color: #004c99;">ЛД: Особо н5т, а что тако5??</span>
+            <br>
+            <span style="color: #004c99;">ЛД: Что-то опять случилось с тво5й колони5й?</span>
+            <br>
+            <span style="color: #009999;">МС: моя великая колония впорядке. Я хотела попросить тебя решить загадку которую мне прислал какой-то доставучий придурок с красным текстом . . !</span>
+            <br>
+            <span style="color: #009999;">МС: сейчас я скопирую и отправлю тебе</span>
+            <br>
+            <span style="color: #009999;">МС: <span style="color: #990000;">ЗВ: летят два крокодила: один зелёный, другой в Африку. Сколько весит килограмм асфальта, если ежику четыре года</span>
+            <br>
+            <span style="color: #004c99;">ЛД: Так тут ж5 л5гко! Отв5т килька</span>
+            <br>
+            <span style="color: #009999;">МС: хм??</span>
+        </div>
+
+    </div>    
+
+        <!-- КНОПКА НА СЛЕДУЮЩУЮ СТРАНИЦУ -->
+        <div class="comic-next">
+           &gt; <a href="008.html">======></a>
+        </div>
+
+</div>
+
+<!-- СКРИПТ ДЛЯ РАБОТЫ КНОПКИ (ОТКРЫТИЕ/ЗАКРЫТИЕ) -->
+<script>
+function togglePesterlog(button) {
+    const content = document.getElementById("pesterlog");
+    
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        button.textContent = "Показать досталог";
+    } else {
+        content.style.display = "block";
+        button.textContent = "Скрыть досталог";
+    }
+}
+</script>
+
+</body>
+</html>
