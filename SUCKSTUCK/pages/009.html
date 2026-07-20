@@ -85,6 +85,30 @@
             image-rendering: pixelated;                /* Chrome / Opera GX / Яндекс */
             -ms-interpolation-mode: nearest-neighbor;  /* IE */
         }
+                /* АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ ТЕЛЕФОНЫ */
+        @media (max-width: 980px) {
+            body {
+                padding: 10px; /* Уменьшаем отступы по краям экрана */
+            }
+            /* Заставляем все каноничные таблицы сжиматься под размер экрана */
+            table[width="950"], table[width="600"] {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            /* Делаем так, чтобы картинка сейфа/комикса не вылезала за экран */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            /* Немного увеличиваем кнопки и инпуты, чтобы по ним было удобно тыкать пальцем */
+            .pw-input, .pw-submit, .button {
+                font-size: 16px !important; 
+                padding: 8px 12px !important;
+            }
+            .error-message {
+                max-width: 90%;
+            }
+        }
     </style>
 </head>
     </style>
