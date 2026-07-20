@@ -127,6 +127,28 @@
         .hub-footer a:hover {
             color: #d4008d; /* При наведении ссылка станет синей */
         }
+                /* АДАПТАЦИЯ ДЛЯ ХАБА */
+        @media (max-width: 980px) {
+            body {
+                padding: 10px;
+            }
+            /* Главная панель растягивается на весь экран смартфона */
+            #hub-page {
+                width: 100%;
+                padding: 20px 15px;
+            }
+            /* Карточки комиксов сжимаются под мобильный дисплей */
+            .comic-item {
+                width: 100%;
+                padding: 15px;
+            }
+            .hub-title {
+                font-size: 28px; /* Чуть уменьшаем заголовки, чтобы они не переносились криво */
+            }
+            .comic-link {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
