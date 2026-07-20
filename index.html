@@ -26,7 +26,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-radius: 8px; /* Слегка скруглим углы для красоты */
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
@@ -89,6 +88,36 @@
             color: #000000;
             line-height: 1.7;
         }
+
+                /* Краткое инфо о комиксе */
+        .comic-info {
+            font-size: 14px;
+            color: #000000;
+            line-height: 1.7;
+        }
+
+        /* НАШ НОВЫЙ БЛОК ДЛЯ ССЫЛОК НА СОЦСЕТИ */
+        .hub-footer {
+            margin-top: 60px; /* Отступ сверху, чтобы отделить от списка комиксов */
+            font-size: 14px;
+            font-weight: bold;
+            color: #444444;
+            text-align: center;
+            border-top: 1px dashed #777777; /* Стильная пунктирная линия */
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        /* Стиль ссылок на соцсети */
+        .hub-footer a {
+            color: #000000; /* Фирменный фиолетовый/пурпурный цвет, под стать эмо-тематике */
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+
+        .hub-footer a:hover {
+            color: #d4008d; /* При наведении ссылка станет синей */
+        }
     </style>
 </head>
 <body>
@@ -126,6 +155,15 @@
 
         <!-- Сюда в будущем можно будет добавлять новые блоки <div class="comic-item"> для других историй -->
 
+            <!-- НАШИ СОЦСЕТИ (ВСТАВЛЯТЬ СЮДА) -->
+        <div class="hub-footer">
+            вотут можно последить посмотреть видео мхм мхм:
+            <br><br>
+            <a href="https://t.me/podvalnayakorro" target="_blank">тегека</a> | 
+            <a href="https://www.tiktok.com/@korroro46?_r=1&_t-ZS-98CAAx3K756" target="_blank">тикеток</a>
+        </div>
+
+ </div>
     </div>
 
  </div>
