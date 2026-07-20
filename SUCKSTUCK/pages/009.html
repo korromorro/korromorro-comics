@@ -48,6 +48,21 @@
             cursor: pointer;
         }
 
+        .comic-image img {
+            max-width: 100%;
+            height: auto;
+            
+            /* Отключаем сглаживание во всех браузерах (включая Opera GX) */
+            image-rendering: -moz-crisp-edges;         /* Firefox */
+            image-rendering: -o-crisp-edges;           /* Старая Opera */
+            image-rendering: -webkit-optimize-contrast;/* Safari / WebKit */
+            image-rendering: crisp-edges;              /* Современные стандарты */
+            image-rendering: pixelated;                /* Chrome / Opera GX / Яндекс */
+            
+            /* Убираем возможное размытие от самого браузера */
+            -ms-interpolation-mode: nearest-neighbor;  /* IE */
+        }
+
         /* Красный блок для вывода каноничной ошибки */
         .error-message {
             font-size: 14px;
