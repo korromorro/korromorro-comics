@@ -53,6 +53,7 @@
             margin: 0 auto; 
             overflow: hidden; 
             background: #000;
+            position: relative;
         }
 
         /* Стилизация картинок внутри контейнера (если будут на других страницах) */
@@ -118,10 +119,18 @@
                 padding-bottom: 25px;
             }
 
-            /* Заставляем флеш-контейнер сжиматься под ширину мобилки */
+            /* Заставляем флеш-контейнер правильно подстраиваться на телефонах */
             .comic-image {
-                width: 100% !important; 
-                height: auto !important; /* Высота подстроится сама благодаря aspect-ratio */
+                width: 650px !important; /* Удерживаем исходную ширину для расчета */
+                height: 450px !important; /* Удерживаем исходную высоту */
+                transform-origin: top center; /* Точка, от которой сжимается игра */
+                
+                /* Формула автоматически высчитывает, во сколько раз сжать игру под экран мобилки */
+                transform: scale(calc((100vw - 30px) / 650)); 
+                
+                max-width: none !important;
+            }
+
             }
 
             .comic-title {
