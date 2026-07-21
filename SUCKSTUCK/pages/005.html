@@ -144,10 +144,37 @@
            [S] Корамо: Залезь на подоконник и пускай пузыри.
         </div>
 
-                <!-- ВОТ СЮДА ВСТАВЛЯЕМ ИГРОВОЙ ЭКРАН -->
-        <div class="comic-image" style="width: 100%; max-width: 650px; aspect-ratio: 650 / 450; margin: 0 auto; overflow: hidden; background: #000;">
-            <iframe src="../flash_games/Bubble%20Game/Bubble_Game.html" style="width: 100%; height: 100%; border: none; display: block; margin: 0; padding: 0;"></iframe>
-        </div>
+       <!-- ВНЕШНИЙ КОНТЕЙНЕР (Держит пропорции на странице, чтобы текст внизу не налезал) -->
+		<div class="flash-wrapper" style="width: 100%; max-width: 650px; aspect-ratio: 650 / 450; margin: 0 auto; background: #000; overflow: hidden; position: relative;">
+		    
+		    <!-- ВНУТРЕННИЙ КОНТЕЙНЕР (Сам игровой экран, который мы уменьшаем) -->
+		    <div class="comic-image" style="width: 650px; height: 450px; position: absolute; top: 0; left: 50%; transform: translate(-50%, 0); transform-origin: top center;">
+		        
+		        <iframe src="../flash_games/Bubble%20Game/Bubble_Game.html" style="width: 100%; height: 100%; border: none; display: block;"></iframe>
+		    
+		    </div>
+		</div>
+		
+		<!-- НЕБОЛЬШОЙ СКРИПТ-ПОМОЩНИК (Автоматически считает размер экрана телефона) -->
+		<script>
+		function resizeFlashGame() {
+		    const wrapper = document.querySelector('.flash-wrapper');
+		    const game = document.querySelector('.comic-image');
+		    if (!wrapper || !game) return;
+		
+		    // Считаем текущую ширину, которую телефон выделил под игру
+		    const currentWidth = wrapper.clientWidth; 
+		    // Высчитываем коэффициент сжатия (текущая ширина делить на каноничную 650px)
+		    const scale = currentWidth / 650;
+		
+		    // Применяем масштабирование к игре на лету!
+		    game.style.transform = `translate(-50%, 0) scale(${scale})`;
+		}
+		
+		// Запускаем расчет при загрузке страницы и при повороте экрана
+		window.addEventListener('load', resizeFlashGame);
+		window.addEventListener('resize', resizeFlashGame);
+		</script>
 
         <!-- ТЕКСТ ВНИЗУ (Теперь жирный) -->
         <div class="comic-text">
