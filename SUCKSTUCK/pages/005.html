@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUCKSTUCK | Комиксы Korromorro</title>
     <style>
-                /* Базовые настройки страницы */
+        /* Базовые настройки страницы */
         body {
             background-color: #333333; 
             font-family: "Courier New", monospace;
@@ -45,19 +45,25 @@
             padding-bottom: 30px; /* ДОБАВЛЕНО: создает пустое пространство в самом низу бежевого квадрата */
         }
 
-        /* Стилизация картинки (Чёткие пиксели без мыла) */
+        /* НАСТРОЙКИ КОНТЕЙНЕРА ИГРЫ (Оригинальный размер для ПК) */
+        .comic-image {
+            width: 650px; 
+            max-width: 100%;
+            aspect-ratio: 650 / 450; /* Фиксирует пропорции флешки */
+            margin: 0 auto; 
+            overflow: hidden; 
+            background: #000;
+        }
+
+        /* Стилизация картинок внутри контейнера (если будут на других страницах) */
         .comic-image img {
             max-width: 100%;
             height: auto;
-            
-            /* Отключаем сглаживание во всех браузерах (включая Opera GX) */
             image-rendering: -moz-crisp-edges;         /* Firefox */
             image-rendering: -o-crisp-edges;           /* Старая Opera */
             image-rendering: -webkit-optimize-contrast;/* Safari / WebKit */
             image-rendering: crisp-edges;              /* Современные стандарты */
             image-rendering: pixelated;                /* Chrome / Opera GX / Яндекс */
-            
-            /* Убираем возможное размытие от самого браузера */
             -ms-interpolation-mode: nearest-neighbor;  /* IE */
         }
 
@@ -84,16 +90,16 @@
             margin-bottom: 40px; /* ДОБАВЛЕНО: расталкивает текст и кнопку перехода друг от друга */
         }
 
-        /* Зона кнопки перехода (Тоже добавляем отступ слева, чтобы кнопка не прилипала) */
+        /* Зона кнопки перехода */
         .comic-next {
-
             font-size: 24px;
             text-align: left;
             margin-top: 15px;
             padding-left: 25px; 
             font-family: Verdana, Arial, Helvetica, sans-serif; 
         }
-		/* НАШИ МОБИЛЬНЫЕ НАСТРОЙКИ (ВКЛЮЧАЮТСЯ НА СМАРТФОНАХ) */
+
+        /* НАШИ МОБИЛЬНЫЕ НАСТРОЙКИ (ВКЛЮЧАЮТСЯ НА СМАРТФОНАХ) */
         @media (max-width: 980px) {
             body {
                 padding: 0; /* На мобилках убираем лишние отступы у краев экрана */
@@ -112,6 +118,12 @@
                 padding-bottom: 25px;
             }
 
+            /* Заставляем флеш-контейнер сжиматься под ширину мобилки */
+            .comic-image {
+                width: 100% !important; 
+                height: auto !important; /* Высота подстроится сама благодаря aspect-ratio */
+            }
+
             .comic-title {
                 font-size: 24px; /* Чуть уменьшаем заголовок, чтобы он красиво помещался */
                 padding: 0 10px;
@@ -121,7 +133,7 @@
                 font-size: 14px; /* Текст комикса оставляем читаемым */
                 padding: 0 15px; /* Немного сужаем боковые поля */
                 margin-bottom: 30px;
-                text-align: center; /* НА ВЫБОР: на мобилках длинный текст читать удобнее слева, а не по центру */
+                text-align: center; 
             }
 
             .comic-next {
@@ -144,16 +156,15 @@
            [S] Корамо: Залезь на подоконник и пускай пузыри.
         </div>
 
-        <!-- ВОТ СЮДА ВСТАВЛЯЕМ ИГРОВОЙ ЭКРАН -->
-        <div class="comic-image" style="width: 650px; height: 450px; margin: 0 auto; overflow: hidden; background: #000;">
+        <!-- ИГРОВОЙ ЭКРАН (Фиксированные стили убраны в CSS для адаптивности) -->
+        <div class="comic-image">
             <iframe src="../flash_games/Bubble%20Game/Bubble_Game.html" style="width: 100%; height: 100%; border: none; display: block; margin: 0; padding: 0;"></iframe>
         </div>
 
-
         <!-- ТЕКСТ ВНИЗУ (Теперь жирный) -->
         <div class="comic-text">
-        <p>(Нажмите F, чтобы пускать пузыри.)</p>
-        <p>(Перед тем как нажимать F, нажмите внутрь игры, чтобы кнопка работала.)</p>
+            <p>(Нажмите F, чтобы пускать пузыри.)</p>
+            <p>(Перед тем как нажимать F, нажмите внутрь игры, чтобы кнопка работала.)</p>
         </div>
 
         <!-- КНОПКА НА СЛЕДУЮЩУЮ СТРАНИЦУ (С измененным шрифтом) -->
@@ -161,9 +172,9 @@
            &gt; <a href="006.html">Корамо: Хватит дурачится, тебе кто-то написал.</a>
         </div>
 
-    </div>
+    </div> <!-- Закрывает .comic-container -->
 
- </div>
+ </div> <!-- Закрывает #page -->
 
 </body>
 </html>
