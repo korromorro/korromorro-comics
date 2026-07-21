@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BZXSKCCFN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-6BZXSKCCFN');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUCKSTUCK | Комиксы Korromorro</title>
+    <style>
+                /* Базовые настройки страницы */
+        body {
+            background-color: #333333; 
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Главный контейнер (серая область теперь строго как в оригинале) */
+        #page {
+            width: 950px;
+            background-color: #C6C6C6;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Растянет серый фон до самого низа экрана */
+        }
+
+        /* Игровая область */
+        .comic-container {
+            width: 650px; 
+            background-color: #EEEEEE;
+            padding: 0; 
+            box-sizing: border-box;
+            text-align: center;
+            padding-bottom: 30px; /* ДОБАВЛЕНО: создает пустое пространство в самом низу бежевого квадрата */
+        }
+
+        /* Стилизация картинки (Чёткие пиксели без мыла) */
+        .comic-image img {
+            max-width: 100%;
+            height: auto;
+            
+            /* Отключаем сглаживание во всех браузерах (включая Opera GX) */
+            image-rendering: -moz-crisp-edges;         /* Firefox */
+            image-rendering: -o-crisp-edges;           /* Старая Opera */
+            image-rendering: -webkit-optimize-contrast;/* Safari / WebKit */
+            image-rendering: crisp-edges;              /* Современные стандарты */
+            image-rendering: pixelated;                /* Chrome / Opera GX / Яндекс */
+            
+            /* Убираем возможное размытие от самого браузера */
+            -ms-interpolation-mode: nearest-neighbor;  /* IE */
+        }
+
+        /* Верхний текст (Заголовок строго как в оригинале) */
+        .comic-title {
+            font-family: "Courier New", monospace;
+            font-size: 32px;      /* Крупный размер */
+            font-weight: bold;    /* Жирный шрифт */
+            color: #000000;
+            margin-top: 10px;     /* Небольшой отступ сверху */
+            margin-bottom: 15px;  /* Отступ до картинки */
+            text-align: center;
+        }
+
+        /* Нижний основной текст */
+        .comic-text {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000000;
+            line-height: 1.35;
+            margin: 20px 0;
+            padding: 0 25px; 
+            text-align: center;
+            margin-bottom: 40px; /* ДОБАВЛЕНО: расталкивает текст и кнопку перехода друг от друга */
+        }
+
+        /* Зона кнопки перехода (Тоже добавляем отступ слева, чтобы кнопка не прилипала) */
+        .comic-next {
+
+            font-size: 24px;
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 25px; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+        }
+		/* НАШИ МОБИЛЬНЫЕ НАСТРОЙКИ (ВКЛЮЧАЮТСЯ НА СМАРТФОНАХ) */
+        @media (max-width: 980px) {
+            body {
+                padding: 0; /* На мобилках убираем лишние отступы у краев экрана */
+            }
+
+            #page {
+                width: 100% !important; /* Серый фон растягивается на всю ширину смартфона */
+                padding: 10px 0;
+                min-height: 100vh;
+            }
+
+            .comic-container {
+                width: 100% !important; /* Светлая игровая зона сужается под размеры экрана */
+                border-left: none;
+                border-right: none;
+                padding-bottom: 25px;
+            }
+
+            .comic-title {
+                font-size: 24px; /* Чуть уменьшаем заголовок, чтобы он красиво помещался */
+                padding: 0 10px;
+            }
+
+            .comic-text {
+                font-size: 14px; /* Текст комикса оставляем читаемым */
+                padding: 0 15px; /* Немного сужаем боковые поля */
+                margin-bottom: 30px;
+                text-align: center; /* НА ВЫБОР: на мобилках длинный текст читать удобнее слева, а не по центру */
+            }
+
+            .comic-next {
+                font-size: 18px; /* Уменьшаем кнопку перехода, чтобы ссылка не ломалась на три строки */
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+ <div id="page">
+    
+    <!-- Основной игровой экран -->
+    <div class="comic-container">
+        
+        <!-- ТЕКСТ ВЫШЕ (Заголовок) -->
+        <div class="comic-title">
+           [S] Корамо: Залезь на подоконник и пускай пузыри.
+        </div>
+
+         <!-- ВНЕШНИЙ КОНТЕЙНЕР (Держит пропорции на странице, чтобы текст внизу не налезал) -->
+		<div class="flash-wrapper" style="width: 100%; max-width: 650px; aspect-ratio: 650 / 450; margin: 0 auto; background: #000; overflow: hidden; position: relative;">
+		    
+		    <!-- ВНУТРЕННИЙ КОНТЕЙНЕР (Сам игровой экран, который мы уменьшаем) -->
+		    <div class="comic-image" style="width: 650px; height: 450px; position: absolute; top: 0; left: 50%; transform: translate(-50%, 0); transform-origin: top center;">
+		        
+		        <iframe src="../flash_games/Bubble%20Game/Bubble_Game.html" style="width: 100%; height: 100%; border: none; display: block;"></iframe>
+		    
+		    </div>
+		</div>
+		
+		<!-- НЕБОЛЬШОЙ СКРИПТ-ПОМОЩНИК (Автоматически считает размер экрана телефона) -->
+		<script>
+		function resizeFlashGame() {
+		    const wrapper = document.querySelector('.flash-wrapper');
+		    const game = document.querySelector('.comic-image');
+		    if (!wrapper || !game) return;
+		
+		    // Считаем текущую ширину, которую телефон выделил под игру
+		    const currentWidth = wrapper.clientWidth; 
+		    // Высчитываем коэффициент сжатия (текущая ширина делить на каноничную 650px)
+		    const scale = currentWidth / 650;
+		
+		    // Применяем масштабирование к игре на лету!
+		    game.style.transform = `translate(-50%, 0) scale(${scale})`;
+		}
+		
+		// Запускаем расчет при загрузке страницы и при повороте экрана
+		window.addEventListener('load', resizeFlashGame);
+		window.addEventListener('resize', resizeFlashGame);
+		</script>
+
+        <!-- ТЕКСТ ВНИЗУ (Теперь жирный) -->
+        <div class="comic-text">
+        <p>(Нажмите F, чтобы пускать пузыри.)</p>
+        <p>(Перед тем как нажимать F, нажмите внутрь игры, чтобы кнопка работала.)</p>
+        </div>
+
+        <!-- КНОПКА НА СЛЕДУЮЩУЮ СТРАНИЦУ (С измененным шрифтом) -->
+        <div class="comic-next">
+           &gt; <a href="006.html">Корамо: Хватит дурачится, тебе кто-то написал.</a>
+        </div>
+
+    </div>
+
+ </div>
+
+</body>
+</html>
