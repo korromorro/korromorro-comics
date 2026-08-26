@@ -161,9 +161,9 @@
             
                         <!-- ФОРМА ВВОДА С НАШИМ ЗАЩИЩЕННЫМ СКРИПТОМ -->
                         <form onsubmit="checkPassword(event)" style="font-weight: bold; font-family: 'Courier New', monospace; color:#eeeeee;">
-                            стопстопстоп!!!
+                            стопстопстоп ! ! !
                             <br>
-                            перет тем как стать ей скажы ейо имя!!!! <br>
+                            перет тем как стать ей скажы ейо имя ! ! ! ! <br>
                             <input type="text" id="passwordField" class="pw-input" autocomplete="off" style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase()">
                             <input type="submit" value="Ввести имя." class="pw-submit">
                         </form>
@@ -194,7 +194,7 @@
                                   <tr>
                                   <td width="100%" valign="top"> 
                                     <p style="font-weight: bold; font-family: 'Courier New', monospace; color:#eeeeee; margin-top: 10px;">
-                                        <span style="color: #00d9d9">какойже ты дурень.... ейо имя есть на какойто странице!</span>
+                                        <span style="color: #00d9d9">какойже ты дурень . . . ейо имя есть на какойто странице !</span>
                                     </p>
                                   </td>
                                   </tr>
@@ -229,13 +229,9 @@ function checkPassword(event) {
     const userInput = document.getElementById("passwordField").value.trim();
     const errorBox = document.getElementById("errorBox");
     
-    if (userInput === 'ДЖУНЕЯ') {
-        // Пароль №1
-        window.location.href = "010.html";
-
-    } else if (userInput === 'ЛЕНИВАЯ ЖОПОНЮШКА') {
+    }if (userInput === 'ЛЕНИВАЯ ЖОПОНЮШКА') {
         // Пароль №2
-        window.location.href = "wtf.html";
+        window.location.href = "010.html";
 
     } else {
         // Если пароль неверный — выдаем сердитый текст
